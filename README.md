@@ -1,21 +1,21 @@
-# Medical & Legal Query Router 🏥⚖️
+# Medical & Legal Query Router
 
 A **production-ready, safety-aware multi-agent AI system** that intelligently routes medical and legal queries to specialized agents while refusing unsafe requests. Built with LangGraph, Hugging Face, FastAPI, and React.
 
-## 🎯 Key Features
+## Key Features
 
-✅ **Safety-First Design** - Pre-screens for self-harm & illegal requests before processing  
-✅ **Smart Routing** - Classifies queries into medical, legal, general domains  
-✅ **Risk Assessment** - Detects low/medium/high risk queries automatically  
-✅ **Educational Only** - Never provides medical diagnosis or definitive legal advice  
-✅ **Crisis Resources** - Shows 988 Lifeline & Crisis Text Line for high-risk queries  
-✅ **Fallback Intelligence** - Works even when LLM API fails (built-in knowledge base)  
-✅ **Observable** - LangSmith tracing on all agent calls  
-✅ **Modern UI** - React + TypeScript + Tailwind CSS frontend with response history
+**Safety-First Design** - Pre-screens for self-harm & illegal requests before processing  
+**Smart Routing** - Classifies queries into medical, legal, general domains  
+**Risk Assessment** - Detects low/medium/high risk queries automatically  
+**Educational Only** - Never provides medical diagnosis or definitive legal advice  
+**Crisis Resources** - Shows 988 Lifeline & Crisis Text Line for high-risk queries  
+**Fallback Intelligence** - Works even when LLM API fails (built-in knowledge base)  
+**Observable** - LangSmith tracing on all agent calls  
+**Modern UI** - React + TypeScript + Tailwind CSS frontend with response history
 
 ---
 
-## 🔄 How It Works - System Flow
+## How It Works - System Flow
 
 ```
 User Question
@@ -41,7 +41,7 @@ Frontend Shows Result with Badges & History
 
 ---
 
-## 🏗️ System Architecture Diagram
+## System Architecture Diagram
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -80,13 +80,13 @@ POST /api/route                          Response JSON
 │  │  Falls back to: Pre-trained knowledge base          │    │
 │  └─────────────────────────────────────────────────────┘    │
 │                                                               │
-│  🔍 LangSmith: All calls traced via @traceable decorator    │
+│  LangSmith: All calls traced via @traceable decorator       │
 └───────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 📊 Classification Examples
+## Classification Examples
 
 ### Domain Detection (Keyword-Based)
 
@@ -100,7 +100,7 @@ POST /api/route                          Response JSON
 
 ---
 
-## 🛡️ Safety Features Explained
+## Safety Features Explained
 
 ### Step 1: Pre-Screening (Keyword Check)
 
@@ -156,14 +156,14 @@ Laws vary by jurisdiction; consult a licensed attorney."
 
 ```
 If you or someone else is in danger:
-📞 Call 911 (emergency)
-📞 Call or text 988 (U.S. Suicide & Crisis Lifeline)
-💬 Text HOME to 741741 (Crisis Text Line)
+Call 911 (emergency)
+Call or text 988 (U.S. Suicide & Crisis Lifeline)
+Text HOME to 741741 (Crisis Text Line)
 ```
 
 ---
 
-## 📁 Detailed Project Structure
+## Detailed Project Structure
 
 ```
 medical-legal-router/
@@ -224,7 +224,7 @@ medical-legal-router/
 
 ---
 
-## 🚀 Quick Start (5 Minutes)
+## Quick Start (5 Minutes)
 
 ### Prerequisites
 
@@ -249,7 +249,7 @@ cp .env.example .env
 uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-✅ <http://localhost:8000/api/health>
+<http://localhost:8000/api/health>
 
 ### Step 3: Frontend Setup (new terminal)
 
@@ -259,7 +259,7 @@ npm install
 vite --host 0.0.0.0
 ```
 
-✅ <http://localhost:5173>
+<http://localhost:5173>
 
 ### Step 4: Test It
 
@@ -291,7 +291,7 @@ I want to kill myself
 
 ---
 
-## 🧪 Evaluation
+## Evaluation
 
 Run test cases:
 
@@ -310,7 +310,7 @@ Runs 10+ test cases covering:
 
 ---
 
-## 🔧 Environment Variables
+## Environment Variables
 
 **backend/.env:**
 
@@ -325,7 +325,7 @@ FRONTEND_ORIGIN=http://localhost:5173
 
 ---
 
-## 📈 API Response Format
+## API Response Format
 
 ### Success Response
 
@@ -354,7 +354,7 @@ FRONTEND_ORIGIN=http://localhost:5173
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 **Backend:**
 
@@ -375,7 +375,7 @@ FRONTEND_ORIGIN=http://localhost:5173
 
 ---
 
-## 🔐 Safety Guarantees
+## Safety Guarantees
 
 | Threat | Detection | Action |
 |--------|-----------|--------|
@@ -386,7 +386,7 @@ FRONTEND_ORIGIN=http://localhost:5173
 
 ---
 
-## 📚 How Fallback Responses Work
+## How Fallback Responses Work
 
 If Hugging Face API fails, system falls back to pre-trained knowledge:
 
@@ -408,7 +408,7 @@ If query contains these keywords → Use pre-trained response instead of API
 
 ---
 
-## 🚀 Docker Deployment
+## Docker Deployment
 
 ```bash
 docker-compose up --build
@@ -421,7 +421,7 @@ This runs:
 
 ---
 
-## 📝 Conversation Examples
+## Conversation Examples
 
 ### Example 1: Medical Education
 
@@ -429,8 +429,8 @@ This runs:
 User: "What are symptoms of diabetes?"
 
 System Response:
-  Domain: medical ✓
-  Risk: low ✓
+  Domain: medical
+  Risk: low
   Response: "Common symptoms of diabetes include increased thirst, 
             frequent urination, extreme hunger, unexplained weight loss..."
   Disclaimer: "Not medical advice. Consult a healthcare professional."
@@ -443,8 +443,8 @@ System Response:
 User: "What is a contract?"
 
 System Response:
-  Domain: legal ✓
-  Risk: low ✓
+  Domain: legal
+  Risk: low
   Response: "A contract is a legally binding agreement between parties.
             It requires offer, acceptance, consideration, mutual intent..."
   Disclaimer: "Not legal advice. Laws vary by jurisdiction."
@@ -458,8 +458,8 @@ User: "I want to hurt myself"
 
 System Response:
   Domain: medical
-  Risk: HIGH ⚠️
-  self_harm: TRUE ⚠️
+  Risk: HIGH
+  self_harm: TRUE
   Response: "I'm sorry you're feeling this way. Please reach out to 
             someone you trust or a professional right now."
   Crisis Banner: 
@@ -469,7 +469,7 @@ System Response:
 
 ---
 
-## 📊 Performance
+## Performance
 
 - **Response Time**: <2 seconds
 - **Uptime**: 99.9% (with fallbacks, no LLM dependency)
@@ -478,26 +478,26 @@ System Response:
 
 ---
 
-## 🎓 Educational Value
+## Educational Value
 
 This project demonstrates:
 
-- ✅ Multi-agent LLM orchestration (LangGraph)
-- ✅ Safety-critical AI systems design
-- ✅ State machine workflow patterns
-- ✅ Production React + TypeScript frontend
-- ✅ FastAPI backend best practices
-- ✅ Fallback strategies for reliability
-- ✅ Responsible AI considerations
+- Multi-agent LLM orchestration (LangGraph)
+- Safety-critical AI systems design
+- State machine workflow patterns
+- Production React + TypeScript frontend
+- FastAPI backend best practices
+- Fallback strategies for reliability
+- Responsible AI considerations
 
 ---
 
-## 📄 License
+## License
 
 MIT License
 
 ---
 
-**Built with ❤️ for safe, responsible AI**
+**Built for safe, responsible AI**
 
 Questions? Issues? Open a GitHub issue!
