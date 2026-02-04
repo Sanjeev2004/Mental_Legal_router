@@ -9,13 +9,13 @@ interface SafetyBadgeProps {
 function toneClasses(tone: SafetyBadgeProps["tone"]) {
     switch (tone) {
         case "danger":
-            return "border-rose-500/30 bg-rose-500/10 text-rose-300";
+            return "border-rose-500/50 bg-gradient-to-r from-rose-500/20 to-red-500/10 text-rose-300 shadow-lg shadow-rose-500/10 hover:shadow-rose-500/20 hover:border-rose-500/70";
         case "warning":
-            return "border-amber-500/30 bg-amber-500/10 text-amber-300";
+            return "border-amber-500/50 bg-gradient-to-r from-amber-500/20 to-orange-500/10 text-amber-300 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 hover:border-amber-500/70";
         case "success":
-            return "border-emerald-500/30 bg-emerald-500/10 text-emerald-300";
+            return "border-emerald-500/50 bg-gradient-to-r from-emerald-500/20 to-green-500/10 text-emerald-300 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20 hover:border-emerald-500/70";
         default:
-            return "border-slate-600/30 bg-slate-600/10 text-slate-400";
+            return "border-slate-600/50 bg-gradient-to-r from-slate-600/20 to-slate-700/10 text-slate-400 shadow-lg shadow-slate-600/10 hover:shadow-slate-600/20 hover:border-slate-600/70";
     }
 }
 
@@ -34,21 +34,10 @@ function toneColor(tone: SafetyBadgeProps["tone"]) {
 
 export function SafetyBadge({ label, tone }: SafetyBadgeProps) {
     return (
-        <span className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-medium ${toneClasses(tone)}`}>
-            <Dot className={`h-1.5 w-1.5 ${toneColor(tone)}`} fill="currentColor" />
-            {label}
-        </span>
-    );
-}
-
-export function domainToTone(domain: Domain) {
-    if (domain === "medical" || domain === "legal") return "warning";
-    if (domain === "general") return "success";
-    return "neutral";
-}
-
-export function riskToTone(risk: RiskLevel) {
+        <span className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-300 backdrop-blur hover:scale-105 cursor-default ${toneClasses(tone)}`}>
+            <Dot className={`h-2 w-2 ${toneColor(tone)} animate-pulse`} fill="currentColor" />
+            export function riskToTone(risk: RiskLevel) {
     if (risk === "high") return "danger";
-    if (risk === "medium") return "warning";
-    return "success";
+            if (risk === "medium") return "warning";
+            return "success";
 }
