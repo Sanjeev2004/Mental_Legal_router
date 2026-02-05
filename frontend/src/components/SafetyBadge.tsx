@@ -36,8 +36,19 @@ export function SafetyBadge({ label, tone }: SafetyBadgeProps) {
     return (
         <span className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-300 backdrop-blur hover:scale-105 cursor-default ${toneClasses(tone)}`}>
             <Dot className={`h-2 w-2 ${toneColor(tone)} animate-pulse`} fill="currentColor" />
-            export function riskToTone(risk: RiskLevel) {
+            {label}
+        </span>
+    );
+}
+
+export function domainToTone(domain: Domain) {
+    if (domain === "medical" || domain === "legal") return "warning";
+    if (domain === "general") return "success";
+    return "neutral";
+}
+
+export function riskToTone(risk: RiskLevel) {
     if (risk === "high") return "danger";
-            if (risk === "medium") return "warning";
-            return "success";
+    if (risk === "medium") return "warning";
+    return "success";
 }
