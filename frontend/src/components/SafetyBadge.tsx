@@ -1,6 +1,7 @@
 import { Dot } from "lucide-react";
 import { Domain, RiskLevel } from "../types";
 
+// Safety badge component with gradient styling
 interface SafetyBadgeProps {
     label: string;
     tone: "neutral" | "warning" | "danger" | "success";
