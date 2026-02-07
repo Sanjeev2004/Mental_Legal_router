@@ -1,4 +1,4 @@
-# Medical & Legal Query Router
+# SochSamajh AI – Responsible Multi-Agent Query Routing System
 
 A **production-ready, safety-aware multi-agent AI system** that intelligently routes medical and legal queries to specialized agents while refusing unsafe requests. Built with LangGraph, Hugging Face, FastAPI, and React.
 
@@ -522,3 +522,4 @@ Copyright (c) 2026 Sanjeev Kumar
 **Built for safe, responsible AI**
 
 Questions? Issues? Open a GitHub issue!
+
