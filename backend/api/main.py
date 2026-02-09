@@ -12,10 +12,15 @@ settings = Settings.load()
 
 app = FastAPI(title="Medical and Legal Query Router", version="1.0.0")
 
+# Handle wildcard origins for CORS
+allow_credentials = True
+if "*" in settings.backend_cors_origins:
+    allow_credentials = False
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.backend_cors_origins,
-    allow_credentials=True,
+    allow_credentials=allow_credentials,
     allow_methods=["*"] ,
     allow_headers=["*"],
 )
