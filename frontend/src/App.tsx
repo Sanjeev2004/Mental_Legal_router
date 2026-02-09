@@ -67,7 +67,7 @@ export default function App() {
                 <header className="mb-12 text-center sm:text-left">
                     <div className="inline-block">
                         <h1 className="text-4xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent mb-2">
-                            Medical & Legal Router
+                            SochSamajh-AI-Responsible-Multi-Agent-Query-Routing-System
                         </h1>
                         <p className="text-sm text-slate-400 tracking-widest uppercase">
                             AI-Powered Safety-Aware Assistant
