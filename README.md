@@ -4,7 +4,7 @@ A **production-ready, safety-aware multi-agent AI system** that intelligently ro
 
 ## Live Demo
 
-[**Try the App Here**](https://mental-legal-router-188qew4tq-sanjeev2004s-projects.vercel.app/)
+[**Try the App Here**]([https://mental-legal-router-188qew4tq-sanjeev2004s-projects.vercel.app/](https://mental-legal-router.vercel.app/))
 
 ## Key Features
 
@@ -526,3 +526,4 @@ Copyright (c) 2026 Sanjeev Kumar
 **Built for safe, responsible AI**
 
 Questions? Issues? Open a GitHub issue!
+
