@@ -103,7 +103,7 @@ export default function App() {
                     {showCrisisResources && (
                         <div className="rounded-xl bg-gradient-to-r from-amber-500/20 to-amber-500/10 backdrop-blur border border-amber-500/30 p-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
                             <p className="text-xs text-amber-100 leading-relaxed">
-                                <strong>Crisis Support Available:</strong> Call 988 (US) | Text HOME to 741741 | Emergency: 911
+                                <strong>Crisis Support Available (India):</strong> Emergency: 112 | Kiran Mental Health Helpline: 1800-599-0019 | iCall: 9152987821
                             </p>
                         </div>
                     )}
